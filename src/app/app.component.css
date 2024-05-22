@@ -1,0 +1,57 @@
+
+.navbar{
+    background-color: #0A1931;
+    /* background-color: #e2e2e2; */
+    /* background-color: #B1DDF1; */
+
+}
+.mono-light{
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 18px;
+    /* color: #F1C40F; */
+    color: #64ffda;
+    
+}
+
+
+
+  
+.nav-link {
+    cursor: pointer;
+    position: relative;
+}
+.nav-link:hover{
+    color: white;
+    text-shadow: #48abe0 0 0 5px;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    bottom: 0;
+    left: 0px;
+    transition: width 0.3s;
+    cursor: pointer;
+    background: white;
+    color: #48abe0;
+    border-radius: 1em;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    box-shadow: 0 0 5px 2px #48abe0;
+  }
+
+  /* b{
+    width: 180px;
+    padding: .1rem;
+    background: white;
+    color: #48abe0;
+    border-radius: 1em;
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px #48abe0;
+  } */
