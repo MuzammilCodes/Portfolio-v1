@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
@@ -12,9 +13,13 @@ export class PortfolioComponent implements OnInit{
   ngOnInit(): void {
     
   }
-  constructor(private fb:FormBuilder){
-
-  }
+  constructor(private fb:FormBuilder){}
+  swalW = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-success ps-3 pe-3 pt-2 pb-2",
+    },
+    buttonsStyling: false
+  });
   formApi:FormGroup = this.fb.group({
     from_name:'',
     to_name:'ADMIN',
@@ -37,7 +42,11 @@ export class PortfolioComponent implements OnInit{
 
 async send(){
     this.isResponseOk = true;
+    this.swalW.fire({
+      icon: "success",
+      title:"Thank You",
+      text: "Your message has been sent successfully. I appreciate you getting in touch and will respond as soon as possible.",
+      confirmButtonText:"Ok"
+    });
 }
-
-  
 }

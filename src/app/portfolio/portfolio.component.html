@@ -1,38 +1,49 @@
-<div style="margin: 0%;">
+<div class="main_container m-0">
     <div id="container1">
         <div class="row">
-            <div class="col bg-light">Image</div>
-            <div class="col bg-light">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed voluptas, cumque mollitia ipsa ea
+            <div class="col">Image</div>
+            <div class="col">
+                <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed voluptas, cumque mollitia ipsa ea
                     voluptate. Facere deleniti nesciunt fugit, voluptas possimus enim molestiae perferendis recusandae
-                    nihil fugiat aut, suscipit quia.</p>
-                <!-- <p class="hometext" id="Myname">Mohammed Muzammil uddin</p>
+                    nihil fugiat aut, suscipit quia.</p> -->
+                <p class="hometext" id="Myname">Mohammed Muzammil uddin</p>
                 <p class="hometext" id="jobrole">Web Developer</p>
-                <p class="hometext" id="quote">Weaving Code and Creativity Together</p> -->
+                <p class="hometext" id="quote">Weaving Code and Creativity Together</p>
             </div>
         </div>
     </div>
 
-    <div id="container2">
-        <!--  -->
-        <h6 class="display-6 text-center">About Me</h6>
-        <div id="about_me_text">
-            <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias amet molestiae inventore dolor fugit, nostrum explicabo. Molestiae autem, similique velit id tempora mollitia animi laudantium cupiditate ut quis maiores quibusdam!</h6>
-            <!-- <h6>hello, Im Mohammed Muzammil uddin, im a Trainee software engineer at Audree Infotech <br>
-                They say the best things come in small packages, and my passion for coding proves that! From diploma
-                days to BTech
-                graduate, I've honed my skills in everything from HTML to Java. Now, as a trainee at Audree Infotech,
-                I'm diving into
-                .NET and Angular, eager to learn and contribute.
-            </h6> -->
-
+    <div id="container2" class="d-flex justify-content-center ">
+        <span id="dotelement"></span>
+        
+        <div class="row">
+            <h6 class="display-6 text-center m-0">About Me</h6>
+            <div id="about_me_text" class="m-0">
+                <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras
+                venenatis euismod malesuada. Nullam ac ligula sit amet erat hendrerit efficitur. Integer ac mi at mauris euismod dictum.
+                Aliquam erat volutpat. Sed id ligula non odio ultrices tincidunt. Fusce laoreet, nunc nec dictum imperdiet, libero quam
+                cursus.</h6>
+                <!-- <h6>hello, Im Mohammed Muzammil uddin, im a Trainee software engineer at Audree Infotech <br>
+                    They say the best things come in small packages, and my passion for coding proves that! From diploma
+                    days to BTech
+                    graduate, I've honed my skills in everything from HTML to Java. Now, as a trainee at Audree Infotech,
+                    I'm diving into
+                    .NET and Angular, eager to learn and contribute.
+                </h6> -->
+            </div>
         </div>
+        <span id="dashelement"></span>
     </div>
 
     <div id="experience">
-            <h6 class="display-6">Experience</h6>
-            <div  class="d-flex justify-content-center">          
-                <!--        <div class="accordion-body">
+            <h6 class="display-6 text-white">Experience</h6>
+            <div  class="d-flex justify-content-center align-items-center">          
+                    <div id="expSectionHeader">
+                        <img id="expIcon" src="../../assets/logo/new_audree_logo.png" alt="">
+                    </div>
+                    <div id="expSectionContent" class="">
+                        <div id="companyName"><p>AUDREE Infotech</p></div>
+                        <div>
                             <p> I've joined Audree Infotech as a .Net Developer, while its a good place to learn enough of the things to become
                                 a good developer. </p>
                             <div class="row">
@@ -51,21 +62,13 @@
                                     <span>Sql</span>
                                 </div>
                             </div>
-                        </div> -->
-                <div class="d-flex align-items-center">
-                    <div id="expSectionHeader">
-                        <img id="expIcon" src="../../assets/logo/new_audree_logo.png" alt="">
+                        </div>
                     </div>
-                    <div id="expSectionContent" class="">
-                        <div id="companyName"><p>AUDREE Infotech</p></div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium numquam omnis minus minima amet sequi dolorum? Quae, maiores voluptatem eius magnam aliquid fugit earum amet commodi esse accusantium, deleniti molestias.</p>
-                    </div>
-                </div>
             </div>
     </div>
-        <!--  -->
-        <div id="skillsContainer">
-            <h6 class="display-6">Skills</h6>
+    <!--  -->
+    <div id="skillsContainer">
+            <h6 class="display-6 text-white">Skills</h6>
             <div class="row w-100 h-100 ps-3 pe-3 justify-content-center">
                 <div class="col" id="skill-container1">
                     <h6 class="skill-titles"><i class="fa-solid fa-code skillIcons" style="padding: 6.5px 4.5px;"></i>Development</h6>
@@ -106,10 +109,10 @@
                 </div>
                
             </div>
-        </div>
-        <!--  -->
-        <div id="education">
-            <h6 class="display-6 text-center" style="display: inline !important;">Education</h6>
+    </div>
+    <!--  -->
+    <div id="education">
+            <h6 class="display-6 text-center text-white" style="display: inline !important;">Education</h6>
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="row">
                     <div class="col"></div>
@@ -179,19 +182,20 @@
                     <div class="col"></div>
                 </div>
             </div>
-        </div>
-        <!--  -->
-        <!--  -->
+    </div>
+    <!--  -->
+    <!--  -->
    
 
 
 
     <div id="contactContainer">
         <div *ngIf="isResponseOk">
-            <img src="../../assets/Animations/congrats-Animation.gif" alt="congrats GIF">
+            <img id="congrats_GIF" src="../../assets/Animations/congrats-Animation.gif" alt="congrats GIF">
         </div>
         <div id="mobilePhone" class="d-flex justify-content-center align-items-center">
-        <form [formGroup]="formApi">
+            <form [formGroup]="formApi">
+            <h1 class="display-6 contactTitle">Contact Me</h1>
             <div class="form-group contactInputs">
                 <label >Name</label>
                 <input type="text" class="form-control m-0" placeholder="Your good Name Please" formControlName="from_name">
