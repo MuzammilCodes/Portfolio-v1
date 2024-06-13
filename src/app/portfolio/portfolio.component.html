@@ -1,11 +1,32 @@
+<nav class="navbar navbar-expand-lg sticky-top">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link mono-light" (click)="scrollToContainer('container1')">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mono-light" (click)="scrollToContainer('experience')">Work</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mono-light" (click)="scrollToContainer('education')">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mono-light" (click)="scrollToContainer('contactContainer')">Contact</a>
+                </li>
+            </ul>
+        </div>
+</nav>
+
 <div class="main_container m-0">
     <div id="container1">
         <div class="row">
-            <div class="col">Image</div>
+            <div class="col"><img class="me" src="../../assets/me2.jpg" alt=""><span id="bgBorder"></span></div>
             <div class="col">
-                <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed voluptas, cumque mollitia ipsa ea
-                    voluptate. Facere deleniti nesciunt fugit, voluptas possimus enim molestiae perferendis recusandae
-                    nihil fugiat aut, suscipit quia.</p> -->
+                <p class="hometext m-0 mt-5" id="hi">Hi! I'm</p>
                 <p class="hometext" id="Myname">Mohammed Muzammil uddin</p>
                 <p class="hometext" id="jobrole">Web Developer</p>
                 <p class="hometext" id="quote">Weaving Code and Creativity Together</p>
@@ -13,63 +34,58 @@
         </div>
     </div>
 
-    <div id="container2" class="d-flex justify-content-center ">
+    <div id="container2" class="w-100 d-flex justify-content-center ">
         <span id="dotelement"></span>
         
         <div class="row">
             <h6 class="display-6 text-center m-0">About Me</h6>
             <div id="about_me_text" class="m-0">
-                <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras
-                venenatis euismod malesuada. Nullam ac ligula sit amet erat hendrerit efficitur. Integer ac mi at mauris euismod dictum.
-                Aliquam erat volutpat. Sed id ligula non odio ultrices tincidunt. Fusce laoreet, nunc nec dictum imperdiet, libero quam
-                cursus.</h6>
-                <!-- <h6>hello, Im Mohammed Muzammil uddin, im a Trainee software engineer at Audree Infotech <br>
+                <h6>hello, Im Mohammed Muzammil uddin, im a software engineer at Audree Infotech <br>
                     They say the best things come in small packages, and my passion for coding proves that! From diploma
                     days to BTech
                     graduate, I've honed my skills in everything from HTML to Java. Now, as a trainee at Audree Infotech,
                     I'm diving into
-                    .NET and Angular, eager to learn and contribute.
-                </h6> -->
+                    .NET , eager to learn and contribute.
+                </h6>
             </div>
         </div>
         <span id="dashelement"></span>
     </div>
 
-    <div id="experience">
-            <h6 class="display-6 text-white">Experience</h6>
-            <div  class="d-flex justify-content-center align-items-center">          
-                    <div id="expSectionHeader">
-                        <img id="expIcon" src="../../assets/logo/new_audree_logo.png" alt="">
-                    </div>
-                    <div id="expSectionContent" class="">
-                        <div id="companyName"><p>AUDREE Infotech</p></div>
-                        <div>
-                            <p> I've joined Audree Infotech as a .Net Developer, while its a good place to learn enough of the things to become
-                                a good developer. </p>
-                            <div class="row">
-                                <div class="col learned-tags1">
-                                    <span>Full stack Development</span>
-                                    <span>Code Deployment</span>
-                                    <span>Optimization techniques</span>
-                                    <span>Team Work</span>
-                                </div>
-                                <div class="col learned-tags2">
-                                    <span>C#</span>
-                                    <span>Asp .Net Core</span>
-                                    <span>Angular</span>
-                                    <span>Azure Devops</span>
-                                    <span>Git</span>
-                                    <span>Sql</span>
-                                </div>
-                            </div>
+    <div id="experience" class=" d-flex justify-content-center align-items-center">
+        <div id="expFrame" class=" m-0">
+            <h6 class="display-6 text-white text-center">Experience</h6>
+            <div id="expContent" class="text-center">
+                <img id="expIcon" src="../../assets/logo/new_audree_logo.png" alt=""><span id="companyName">AUDREE Infotech</span>
+                <div>
+                    <p> I've joined Audree Infotech as a .Net Developer, while its a good place to learn enough of the
+                        things to become
+                        a good developer. </p>
+                    <div class="row">
+                        <div class="col learned-tags1">
+                            <span>Full stack Development</span>
+                            <span>Code Deployment</span>
+                            <span>Optimization techniques</span>
+                            <span>Team Work</span>
+                        </div>
+                        <div class="col learned-tags2">
+                            <span>C#</span>
+                            <span>Asp .Net Core</span>
+                            <span>Angular</span>
+                            <span>Azure Devops</span>
+                            <span>Git</span>
+                            <span>Sql</span>
                         </div>
                     </div>
+                </div>
             </div>
+        </div>
+        
     </div>
     <!--  -->
     <div id="skillsContainer">
             <h6 class="display-6 text-white">Skills</h6>
-            <div class="row w-100 h-100 ps-3 pe-3 justify-content-center">
+            <div class="row w-100 ps-3 pe-3 justify-content-center">
                 <div class="col" id="skill-container1">
                     <h6 class="skill-titles"><i class="fa-solid fa-code skillIcons" style="padding: 6.5px 4.5px;"></i>Development</h6>
                     <div id="skill-row-1">

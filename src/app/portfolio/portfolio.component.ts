@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
@@ -49,4 +49,29 @@ async send(){
       confirmButtonText:"Ok"
     });
 }
+
+// 
+//onscroll change nav bar bg
+@HostListener('window:scroll', [])
+onWindowScroll() {
+  const navbar = document.querySelector('.navbar') as HTMLElement;
+  const scrollPosition = window.pageYOffset;
+  const navbarHeight = navbar.offsetHeight;
+
+  if (scrollPosition > navbarHeight) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+}
+
+scrollToContainer(container:string){
+  const element = document.getElementById(container);
+  if (element) {
+    element.style.marginTop = '-50px';
+    element.scrollIntoView({ behavior: "smooth" });
+    element.style.marginTop = '0';
+  }
+}
+// 
 }

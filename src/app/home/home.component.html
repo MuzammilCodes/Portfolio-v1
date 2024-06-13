@@ -1,15 +1,7 @@
-<div class="container-fluid">
-
-    <div class="container-fluid" id="inner-container">
-
-        <div id="outerButton" *ngIf="hide_btn">
-            <div id="innerButton">
-
-                <button class="btn" id="enterBtn" (click)="togglepopup()" >
-                    <p id="enterText">Enter</p>
-                </button>
-            </div>
-        </div>
-
-    </div>
+<div id="homepage" class="container-fluid d-flex justify-content-center align-items-center">
+    <video id="background-video" loop autoplay #videoPlayer oncanplay="this.play()" onloadedmetadata="this.muted = true" 
+        (play)="onPlay()" (pause)="onPause()">
+        <source src="../../assets/Animations/entryVideo.mp4" type="video/mp4">
+    </video>
+    <button id="enterBtn" (click)="redirectToPortfolio()">Enter</button>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,17 +6,27 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-  open_popup = false;
-  hide_btn = true;
+export class HomeComponent implements OnDestroy {
+  constructor(private router: Router) { }
+  
+  @ViewChild('videoPlayer') videoPlayer: ElementRef;
 
-  constructor(private router: Router,) {
+  ngOnDestroy() {
+    if (this.videoPlayer && this.videoPlayer.nativeElement) {
+      this.videoPlayer.nativeElement.pause();
+      console.log('Video has been paused by ngOnDestroy');
+    }
   }
 
-  togglepopup() {
-    // this.open_popup = true;
-    // this.hide_btn = false;
-    // await new Promise(resolve => setTimeout(resolve, 2000));
+  onPlay() {
+    console.log('Video is playing');
+  }
+
+  onPause() {
+    console.log('Video has been paused');
+  }
+  redirectToPortfolio(){
     this.router.navigate(['/Portfolio']);
   }
+
 }

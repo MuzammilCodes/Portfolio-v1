@@ -1,8 +1,7 @@
 body{
     width: 100%;
     height: max-content;
-    /* background-color: #0A1931; */
-    background-color: #DAE3E5;
+    background-color: #0A1931;
 }
 body::-webkit-scrollbar {
     display: none;

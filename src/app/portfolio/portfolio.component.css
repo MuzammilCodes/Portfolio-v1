@@ -5,30 +5,102 @@
  *{
     margin: 0.5em;
 }
-
-.main_container{
-  background-color: #0a1931;
+.me{
+  width: 24em;
+  margin: 50px 0px 0px 50px ;
+  border-radius: 2px;
+}
+#bgBorder {
+  position: absolute;
+  left: 7%;
+  top: 23%;
+  width: 23.5em;
+  height: 22.5em;
+  border: 2px solid #0A1931;
+  z-index: -1;
 }
 
+/* --------------------------------------------------- */
 
-.container-fluid {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 !important;
+.navbar{
+  padding: 3px 0px;
+    background-color: #0A1931;
+    transition: background-color 200ms linear;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.1px);
+  -webkit-backdrop-filter: blur(5.1px);
+      transition: background-color 200ms linear;
+}
+.navbar.scrolled .nav-link{
+  color: #333333;
+  font-weight: bold;
+}
+
+.mono-light{
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 18px;
+    color: #64ffda;
+    
+}
+  
+.nav-link {
+    cursor: pointer;
+    position: relative;
+}
+.nav-link:hover{
+    color: white;
+    text-shadow: #48abe0 0 0 5px;
   }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    bottom: 0;
+    left: 0px;
+    transition: width 0.3s;
+    cursor: pointer;
+    background: white;
+    color: #48abe0;
+    border-radius: 1em;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    box-shadow: 0 0 5px 2px #48abe0;
+  }
+
+  .navbar, #navbarNav, .navbar-nav, .nav-link, .nav-item{
+    margin: 0;
+  }
+/* --------------------------------------------------- */
+
+#container1, #container2, #experience, #skillsContainer, #education, #contactContainer{
+  margin-left: 0%;
+  margin-right: 0%;
+}
 
  #container1{
   width: 100%;
   height: 47em;
   padding: 0 !important;
-  margin:0em;
   clip-path: polygon(0 0, 100% 0, 100% 58%, 0 70%);
   background-color: rgb(233, 233, 233);
  }
  
  #container2{
-  margin-top: -5%;
-  /* height: 100vh; */
+  margin-top: -12%;
+  margin-bottom: 6em;
+  animation: fade-out linear;
+  animation-timeline: view();
+  animation-range: exit -150px;
 }
 #container2 .row{
   width: 50%;
@@ -37,12 +109,17 @@
   border-radius: 5px;
   height: max-content;
   padding: 0 !important;
-  margin:0%;
+  margin-left: 5.2em !important;
+
+}
+
+@keyframes fade-out {
+  to { opacity: 0; } 
 }
 
 #dotelement{
   position: relative;
-  left: 25px;
+  left: 110px;
   bottom: 55px;
   width: 70px;
   height: 120px;
@@ -64,23 +141,19 @@
 
  #contactContainer, #skillsContainer{
     width: 100%;
-    height: max-content;
-    margin:0% !important;  
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% ); */
-    
+    align-items: center;    
+  }
+
+  #contactContainer{
+    height: 38em;
   }
 
   #skillsContainer{
-    height: 100vh;
-    /* background-color: #EFEFEF; */
-    /* background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%) !important; */
-   
-    /* background-size: 90em; */
-    /* background-position: center; */
+    height: 32em;
+    margin-top: 0 !important;
   }
   #skillsContainer > h6{
     font-size: 2em;
@@ -115,13 +188,6 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(18px);
 -webkit-backdrop-filter: blur(18px);
 border: 1px solid rgba(255, 255, 255, 0.3);
- /* background: rgba(255,255,255, 0.05) !important;
- border: 4px solid #091921; 
- border-radius: 1em;
- backdrop-filter: blur(15px);
- border-top: 1px solid rgba(255,255,255, 0.2);
- border-left: 1px solid rgba(255,255,255, 0.2);
- box-shadow: 5px 5px rgba(0, 0, 0, 0.2); */
 }
 
 
@@ -155,27 +221,30 @@ i.fa-regular{
   margin-left: 0% !important;
 
 }
+#hi{
+  font-weight: bold;
+}
+
 #Myname{
   font-size: 2.8em;
   font-family: 'Red Hat Display', sans-serif;
   margin-bottom: 0%;
-}
+  margin-top: 0%;
+} 
 
 #jobrole{
   font-size: 1.5em; 
   margin-top: 0%;
   margin-bottom: 0%;
-  font-weight:500
+  font-weight:500;
 }
 
 #quote{
   margin-top: 0%;
   font-size: 1.4em;
-  /* font-family: 'Montserrat', sans-serif; */
   font-family: 'Raleway', sans-serif;
 }
 
-/* these both belongs to container2 */
 #education{ 
   text-align: center;
 }
@@ -205,47 +274,21 @@ i.fa-regular{
   width: 100%;
 }
 
-#expSectionHeader, #expSectionContent, #companyName{
-  clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
-}
-
-#expSectionHeader{
-  width: 10em;
-  height: 13em;
-  background-color: rgb(61, 61, 87);
-  z-index: 2;
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
-}
-
-#expSectionContent{
-  height: 12em;
-  width: 30em;
-  background-color: #f1848f;
-  margin-left: -5em;
- 
+#expContent{
+  border-radius: 1em;
+  width:40em;
+  height: 20em;
+  background-color: white;
 }
 
 #expIcon{
   width: 5em;
-  margin-top: 35%;
-  margin-left: 20%;
 }
 
 #companyName{
-  width: 10em;
-  height: 2.5em;
-  color: white;
-  background-color: rgb(61, 61, 87);
-  margin-left: 13%;
-  margin-top: 0%;
+  font-size: large;
 }
-#companyName > p{
-  margin: 0%;
-  padding-left: 0.5em;
-  padding-top: 0.5em;
 
-}
 
 
 .skill_icons p{
@@ -256,7 +299,6 @@ i.fa-regular{
 
 .skill_icons img{
   width: 3em;
-  /* box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px; */
   border-radius: 0.8em;
   padding: 0.3em;
 }
@@ -289,8 +331,8 @@ i.fa-regular{
 }
 
 #experience{
-  height: max-content;
-  margin: 0%;
+  height: 28em;
+  width: 100%;
 }
 
 .skillIcons{
@@ -310,9 +352,7 @@ i.fa-regular{
   height: 34.7em;
   background-repeat: no-repeat;
   background: url(../../assets/skill_icons/mobile.png);
-  background-size: 19em;
-  /* transform: rotateZ(-10deg); */
-  
+  background-size: 19em;  
 }
 
 
@@ -332,7 +372,7 @@ i.fa-regular{
 }
 .contactTitle{
   text-align: center;
-  margin-top: 0%;
+  margin-top: 0% !important;
   margin-bottom: 0%;
   font-size: 30px;
 }
