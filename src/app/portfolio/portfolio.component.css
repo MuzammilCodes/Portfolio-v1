@@ -27,15 +27,18 @@
     background-color: #0A1931;
     transition: background-color 200ms linear;
 }
+.navbar-toggler{
+  background: white;
+}
 
-.navbar.scrolled {
+.scrolled {
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.1px);
   -webkit-backdrop-filter: blur(5.1px);
       transition: background-color 200ms linear;
 }
-.navbar.scrolled .nav-link{
+.scrolled .nav-link{
   color: #333333;
   font-weight: bold;
 }
@@ -52,6 +55,7 @@
 .nav-link {
     cursor: pointer;
     position: relative;
+    text-align: center;
 }
 .nav-link:hover{
     color: white;
@@ -80,6 +84,7 @@
   .navbar, #navbarNav, .navbar-nav, .nav-link, .nav-item{
     margin: 0;
   }
+  
 /* --------------------------------------------------- */
 
 #container1, #container2, #experience, #skillsContainer, #education, #contactContainer{

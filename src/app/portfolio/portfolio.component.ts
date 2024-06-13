@@ -55,13 +55,16 @@ async send(){
 @HostListener('window:scroll', [])
 onWindowScroll() {
   const navbar = document.querySelector('.navbar') as HTMLElement;
+  const navbartoggler = document.querySelector('.navbar-toggler') as HTMLElement;
   const scrollPosition = window.pageYOffset;
   const navbarHeight = navbar.offsetHeight;
 
   if (scrollPosition > navbarHeight) {
     navbar.classList.add('scrolled');
+    navbartoggler.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
+    navbartoggler.classList.remove('scrolled');
   }
 }
 
