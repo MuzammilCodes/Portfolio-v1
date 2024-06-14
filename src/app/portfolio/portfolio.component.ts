@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
@@ -10,16 +10,12 @@ import Swal from 'sweetalert2';
 export class PortfolioComponent implements OnInit{ 
   isResponseOk: boolean = false;
   gifPlayedOnce:boolean = false;
-  ngOnInit(): void {
-    
-  }
+
   constructor(private fb:FormBuilder){}
-  swalW = Swal.mixin({
-    customClass: {
-      confirmButton: "btn btn-success ps-3 pe-3 pt-2 pb-2",
-    },
-    buttonsStyling: false
-  });
+
+  ngOnInit() {
+  }
+
   formApi:FormGroup = this.fb.group({
     from_name:'',
     to_name:'ADMIN',
@@ -42,12 +38,17 @@ export class PortfolioComponent implements OnInit{
 
 async send(){
     this.isResponseOk = true;
-    this.swalW.fire({
-      icon: "success",
+    Swal.fire({
       title:"Thank You",
-      text: "Your message has been sent successfully. I appreciate you getting in touch and will respond as soon as possible.",
-      confirmButtonText:"Ok"
-    });
+      text: "Got your message! I'll get back to you soon.",
+      icon: 'success',
+      confirmButtonColor:'#2778c4',
+      confirmButtonText: 'OK',
+      customClass: {
+          popup: 'my-custom-swal',
+          title: 'my-custom-title',
+      }
+  });
 }
 
 // 
@@ -77,4 +78,5 @@ scrollToContainer(container:string){
   }
 }
 // 
+
 }

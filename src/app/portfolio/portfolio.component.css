@@ -103,23 +103,17 @@
  #container2{
   margin-top: -12%;
   margin-bottom: 6em;
-  animation: fade-out linear;
-  animation-timeline: view();
-  animation-range: exit -150px;
+
 }
 #container2 .row{
   width: 50%;
   z-index: 2;
-  background-color: white;
+  background-color: rgb(211, 211, 211);
   border-radius: 5px;
   height: max-content;
   padding: 0 !important;
   margin-left: 5.2em !important;
 
-}
-
-@keyframes fade-out {
-  to { opacity: 0; } 
 }
 
 #dotelement{
@@ -282,8 +276,38 @@ i.fa-regular{
 #expContent{
   border-radius: 1em;
   width:40em;
-  height: 20em;
-  background-color: white;
+  height: max-content;
+  /* background-color: white; */
+  color: white;
+}
+#expContent > div > ul{
+  padding-left: 0%;
+}
+
+#expContent > div > ul > li{
+  list-style: none;
+  text-align: justify;
+}
+#expContent > div > ul > li > p{
+  display: inline;
+}
+
+.thingsLearnt{
+    text-align: left;
+    font-size: large;
+    margin-bottom: 0;
+}
+.col-5.learned-tags1{
+  text-align: left;
+}
+
+.col-6.learned-tags2 > div{
+  text-align: left;
+}
+
+.col-6.learned-tags2 > div > span {
+margin: 0;
+padding-right: 15px;
 }
 
 #expIcon{
@@ -308,36 +332,10 @@ i.fa-regular{
   padding: 0.3em;
 }
 
- @-webkit-keyframes scale-up-center {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-  100% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-
-  }
-}
-@keyframes scale-up-center {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-  100% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-
-  }
-}
 
 #experience{
-  height: 28em;
-  width: 100%;
+  height: max-content;
+  width: 100%; 
 }
 
 .skillIcons{
@@ -371,25 +369,23 @@ i.fa-regular{
   overflow: hidden;
   transform: rotateY(48deg) rotateX(6.5deg) scale(1.12);
 }
-#congrats_GIF{
-  position: absolute;
-  width: 20em;
-}
 .contactTitle{
   text-align: center;
   margin-top: 0% !important;
   margin-bottom: 0%;
   font-size: 30px;
+  font-weight: 400;
 }
 
 .contactInputs > input{
   font-family: "PT Sans", sans-serif;
-  font-weight: bold;
   letter-spacing: 0.5px;
   font-style: normal;
 }
 
-
+.contactInputs > label{
+  font-weight: bold;
+}
 
 .pushable{
   background: hsl(202, 100%, 32%);
@@ -399,8 +395,8 @@ i.fa-regular{
   cursor: pointer;
   outline-offset: 4px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-
 }
+
 .front{
   display: block;
   margin: 0;
@@ -416,3 +412,75 @@ i.fa-regular{
   transform: translateY(0px);
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
+
+
+/* SCROLL ANIMATIONS */
+
+#container2, #experience{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+
+
+#contactContainer{
+  animation: appearPhone linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+@keyframes appear {
+  from{
+    opacity: 0;
+    scale: 0.5;
+  }
+  to{
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes appearPhone {
+  from{
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+#skill-container1, .row .col:nth-of-type(2) .accordion-item
+{
+  animation: appearLSkills_n_edu linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+#skill-container2, .row .col:nth-of-type(4) .accordion-item
+{
+  animation: appearRSkills_n_edu linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+@keyframes appearLSkills_n_edu {
+  from{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes appearRSkills_n_edu {
+  from{
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+

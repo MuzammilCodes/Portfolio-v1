@@ -25,7 +25,7 @@
 <div class="main_container m-0">
     <div id="container1">
         <div class="row">
-            <div class="col"><img class="me" src="../../assets/me2.jpg" alt=""><span id="bgBorder"></span></div>
+            <!-- <div class="col"><img class="me" src="../../assets/me2.jpg" alt=""><span id="bgBorder"></span></div> -->
             <div class="col">
                 <p class="hometext m-0 mt-5" id="hi">Hi! I'm</p>
                 <p class="hometext" id="Myname">Mohammed Muzammil uddin</p>
@@ -41,7 +41,8 @@
         <div class="row">
             <h6 class="display-6 text-center m-0">About Me</h6>
             <div id="about_me_text" class="m-0">
-                <h6>hello, Im Mohammed Muzammil uddin, im a software engineer at Audree Infotech <br>
+                <h6>Hello, I'm Mohammed Muzammil uddin,<br>
+                    I'm a software engineer at Audree Infotech <br>
                     They say the best things come in small packages, and my passion for coding proves that! From diploma
                     days to BTech
                     graduate, I've honed my skills in everything from HTML to Java. Now, as a trainee at Audree Infotech,
@@ -53,29 +54,47 @@
         <span id="dashelement"></span>
     </div>
 
-    <div id="experience" class=" d-flex justify-content-center align-items-center">
+    <div id="experience" class="d-flex justify-content-center align-items-center experience">
         <div id="expFrame" class=" m-0">
             <h6 class="display-6 text-white text-center">Experience</h6>
             <div id="expContent" class="text-center">
                 <img id="expIcon" src="../../assets/logo/new_audree_logo.png" alt=""><span id="companyName">AUDREE Infotech</span>
                 <div>
-                    <p> I've joined Audree Infotech as a .Net Developer, while its a good place to learn enough of the
-                        things to become
-                        a good developer. </p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i><p>Gained hands-on experience with Angular, C#, .NET Framework, Dapper ORM, and Azure DevOps Server, contributing to
+                        coding, troubleshooting, and deployment tasks.</p></li>
+                        <li><i class="fa-solid fa-check"></i><p>Enhanced application performance through optimization techniques and the development of common implementations</p></li>
+                        <li><i class="fa-solid fa-check"></i><p>Developed projects based on new requirements, aligning with client needs and industry standards, while emphasizing team
+                        work, code deployment, and adherence to (DDD) architecture principles.</p></li>
+                    </ul>
                     <div class="row">
-                        <div class="col learned-tags1">
-                            <span>Full stack Development</span>
-                            <span>Code Deployment</span>
-                            <span>Optimization techniques</span>
-                            <span>Team Work</span>
+                        <h6 class="display-6 thingsLearnt">Things I've learned here</h6>
+                        <div class="col-5 learned-tags1">
+                            <li>Full stack Development</li>
+                            <li>Code Deployment</li>
+                            <li>Optimization techniques</li>
+                            <li>Team Work</li>
                         </div>
-                        <div class="col learned-tags2">
-                            <span>C#</span>
-                            <span>Asp .Net Core</span>
-                            <span>Angular</span>
-                            <span>Azure Devops</span>
-                            <span>Git</span>
-                            <span>Sql</span>
+                        <div class="col-6 learned-tags2">
+                            <div>
+                                <span>Angular</span>
+                                <span>C#</span>
+                                <span>.NET Framework</span>
+                                </div>
+                                <div>
+                                    <span>MVC</span>
+                                    <span>Git</span>
+                                    <span>Sql</span>
+                                    <span>Dapper ORM</span>
+                            </div>
+                            <div>
+                                <span>Azure Devops Server</span>
+                                <span>(DDD) Architecture</span>
+                            </div>
+                            <div>
+
+                                <span>Entity Framework (Database First Approach)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -201,15 +220,7 @@
             </div>
     </div>
     <!--  -->
-    <!--  -->
-   
-
-
-
     <div id="contactContainer">
-        <div *ngIf="isResponseOk">
-            <img id="congrats_GIF" src="../../assets/Animations/congrats-Animation.gif" alt="congrats GIF">
-        </div>
         <div id="mobilePhone" class="d-flex justify-content-center align-items-center">
             <form [formGroup]="formApi">
             <h1 class="display-6 contactTitle">Contact Me</h1>
