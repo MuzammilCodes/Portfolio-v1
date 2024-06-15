@@ -87,7 +87,7 @@
   
 /* --------------------------------------------------- */
 
-#container1, #container2, #experience, #skillsContainer, #education, #contactContainer{
+#container1, #container2, #experience, #skillsContainer, #education, #contactContainer, #projectContainer{
   margin-left: 0%;
   margin-right: 0%;
 }
@@ -313,6 +313,17 @@ margin: 0;
 padding-right: 15px;
 }
 
+.project_names{
+  font-size: 1.5em;
+  font-weight: 400;
+
+}
+
+.projectLinks{
+  width: 25px;
+  margin: 0;
+}
+
 #expIcon{
   width: 5em;
 }
@@ -339,6 +350,13 @@ padding-right: 15px;
 #experience{
   height: max-content;
   width: 100%; 
+}
+
+
+.projectItems{
+  width: 70%;
+  background-color: #e9e9e9;
+  border-radius: 1em;
 }
 
 .skillIcons{
@@ -414,6 +432,14 @@ padding-right: 15px;
 .pushable:active .front {
   transform: translateY(0px);
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+#projectContainer{
+  width: 100%;
+}
+#projectContainer .row{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 
