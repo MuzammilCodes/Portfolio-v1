@@ -464,12 +464,31 @@ padding-right: 15px;
   animation-range: entry 0 cover 40%;
 }
 
-
 #contactContainer{
-  animation: appearPhone linear;
+  animation: slide_Left linear;
   animation-timeline: view();
   animation-range: entry 0 cover 40%;
 }
+
+#skill-container1, .row .col:nth-of-type(2) .accordion-item
+{
+  animation: slide_Right linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+.row .col:nth-of-type(4) .accordion-item
+{
+  animation: slide_Left linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+
+#skill-container2{
+  animation: slide_Up linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+
 @keyframes appear {
   from{
     opacity: 0;
@@ -481,7 +500,7 @@ padding-right: 15px;
   }
 }
 
-@keyframes appearPhone {
+@keyframes slide_Left {
   from{
     opacity: 0;
     transform: translateX(100px);
@@ -492,27 +511,8 @@ padding-right: 15px;
   }
 }
 
-#skill-container1, .row .col:nth-of-type(2) .accordion-item
-{
-  animation: appearLSkills_n_edu linear;
-  animation-timeline: view();
-  animation-range: entry 0 cover 40%;
-}
-.row .col:nth-of-type(4) .accordion-item
-{
-  animation: appearRSkills_n_edu linear;
-  animation-timeline: view();
-  animation-range: entry 0 cover 40%;
-}
 
-#skill-container2{
-  animation: appearRSkills linear;
-  animation-timeline: view();
-  animation-range: entry 0 cover 40%;
-}
-
-
-@keyframes appearLSkills_n_edu {
+@keyframes slide_Right {
   from{
     opacity: 0;
     transform: translateX(-100px);
@@ -523,18 +523,7 @@ padding-right: 15px;
   }
 }
 
-@keyframes appearRSkills_n_edu {
-  from{
-    opacity: 0;
-    transform: translateX(100px);
-  }
-  to{
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-
-@keyframes appearRSkills {
+@keyframes slide_Up {
   from{
     opacity: 0;
     transform: translateY(100px);
