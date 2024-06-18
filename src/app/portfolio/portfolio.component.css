@@ -163,6 +163,10 @@
   align-items: center;
 }
 
+a.socialLinks:hover {
+  text-decoration: underline;
+}
+
  #contactContainer, #skillsContainer{
     width: 100%;
     display: flex;
@@ -460,7 +464,7 @@ padding-right: 15px;
 
 #container2, #experience{
   animation: appear linear;
-  animation-timeline: view();
+  animation-timeline: view(-50px);
   animation-range: entry 0 cover 40%;
 }
 

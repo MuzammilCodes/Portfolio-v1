@@ -8,9 +8,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit{ 
-  isResponseOk: boolean = false;
-  gifPlayedOnce:boolean = false;
-
   constructor(private fb:FormBuilder){}
 
   ngOnInit() {
@@ -18,38 +15,36 @@ export class PortfolioComponent implements OnInit{
 
   formApi:FormGroup = this.fb.group({
     from_name:'',
-    to_name:'ADMIN',
+    from_email:'',
     message:''
   })
 
-//  async send(){
-//   emailjs.init('iC9MB9sJVXQ47tbuf');
-//     let response  = await emailjs.send("service_kyt60zb","template_qb54fz8",{
-//       from_name: this.formApi.value.from_name,
-//       to_name: "muzammil",
-//       message: this.formApi.value.message,
-//       });
-//       console.log(response, typeof(response));
-//       if(response.status == 200 && response.text == 'OK'){
-
-//       }
-//       this.formApi.reset();
-//   }
-
-async send(){
-    this.isResponseOk = true;
-    Swal.fire({
-      title:"Thank You",
-      text: "Got your message! I'll get back to you soon.",
-      icon: 'success',
-      confirmButtonColor:'#2778c4',
-      confirmButtonText: 'OK',
-      customClass: {
-          popup: 'my-custom-swal',
-          title: 'my-custom-title',
+ async send(){
+  emailjs.init('kJfS8RR9dekvphXCy'); 
+      let response  = await emailjs.send("service_pwe1eny","template_r7ay4xe",{
+        from_name: this.formApi.value.from_name,
+        to_name: "Muzammil",
+        from_email: this.formApi.value.from_email,
+        message: this.formApi.value.message,
+        });
+      
+      console.log(response, typeof(response));
+      if(response.status == 200 && response.text == 'OK'){
+        Swal.fire({
+          title:"Thank You",
+          text: "Got your message! I'll get back to you soon.",
+          icon: 'success',
+          confirmButtonColor:'#2778c4',
+          confirmButtonText: 'OK',
+          customClass: {
+              popup: 'my-custom-swal',
+              title: 'my-custom-title',
+          }
+      });
       }
-  });
-}
+      this.formApi.reset();
+  }
+
 
 // 
 //onscroll change nav bar bg
