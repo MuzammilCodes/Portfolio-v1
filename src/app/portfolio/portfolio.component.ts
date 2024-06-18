@@ -27,9 +27,7 @@ export class PortfolioComponent implements OnInit{
         from_email: this.formApi.value.from_email,
         message: this.formApi.value.message,
         });
-      
-      console.log(response, typeof(response));
-      if(response.status == 200 && response.text == 'OK'){
+        if(response.status == 200 && response.text == 'OK'){
         Swal.fire({
           title:"Thank You",
           text: "Got your message! I'll get back to you soon.",
@@ -46,7 +44,7 @@ export class PortfolioComponent implements OnInit{
   }
 
 
-// 
+
 //onscroll change nav bar bg
 @HostListener('window:scroll', [])
 onWindowScroll() {
@@ -72,6 +70,6 @@ scrollToContainer(container:string){
     element.style.marginTop = '0';
   }
 }
-// 
+
 
 }
