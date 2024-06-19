@@ -335,7 +335,10 @@ padding-right: 15px;
   font-weight: 400;
 
 }
+.project_names:hover{
+ text-decoration: underline;
 
+}
 .projectLinks{
   width: 25px;
   margin: 0;
