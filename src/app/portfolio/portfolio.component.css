@@ -299,7 +299,7 @@ a.socialLinks:hover {
 
 #expContent{
   border-radius: 1em;
-  width:40em;
+  width:45em;
   height: max-content;
   /* background-color: white; */
   color: white;
@@ -319,15 +319,12 @@ a.socialLinks:hover {
 .thingsLearnt{
     font-size: large;
     margin-bottom: 0;
+    text-decoration: underline;
 }
-.col-5.learned-tags1{
+.col-5.learned-tags1, .col-6.learned-tags2{
   text-align: left;
-}
-
-
-.col-6.learned-tags2 > div > span {
-margin: 0;
-padding-right: 15px;
+  margin: 0;
+  padding: 0;
 }
 
 .project_names{
@@ -335,13 +332,24 @@ padding-right: 15px;
   font-weight: 400;
 
 }
-.project_names:hover{
- text-decoration: underline;
 
-}
 .projectLinks{
   width: 25px;
   margin: 0;
+}
+
+.projectLinkHover{
+  width: 15px;
+  margin-bottom: 1.2em;
+  margin-right: 2em;
+  margin-left: -1em;
+opacity: 0%;  
+
+
+}
+
+.projectItems > label > a:hover .projectLinkHover{
+  opacity: 100%;
 }
 
 #expIcon{
