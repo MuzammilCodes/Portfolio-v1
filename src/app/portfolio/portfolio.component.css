@@ -2,7 +2,7 @@
     margin: 0.5em;
 }
 .me{
-  width: 24em;
+  width: 59%;
   margin: 50px 0px 0px 50px ;
   border-radius: 2px;
 }
@@ -158,6 +158,7 @@
 }
 
 .footer_alignment{
+  /* width: 100vw; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,7 +181,7 @@ a.socialLinks:hover {
   }
 
   #skillsContainer{
-    height: 32em;
+    height: max-content;
     margin-top: 0 !important;
   }
   #skillsContainer > h6{
@@ -235,27 +236,26 @@ a.socialLinks:hover {
 .row{
   margin: 0% !important;
 }
-.col{
-  background-color: transparent;
-}
+
 
 .hometext{
   margin-left: 0% !important;
 
 }
-#hi{
+ #hi{
   font-weight: bold;
+  font-size: 1.6vw;
 }
 
 #Myname{
-  font-size: 2.8em;
+  font-size: 3.3vw;
   font-family: 'Red Hat Display', sans-serif;
   margin-bottom: 0%;
   margin-top: 0%;
 } 
 
 #jobrole{
-  font-size: 1.5em; 
+  font-size: 1.9vw; 
   margin-top: 0%;
   margin-bottom: 0%;
   font-weight:500;
@@ -265,15 +265,53 @@ a.socialLinks:hover {
   margin-top: 0%;
   font-size: 1.4em;
   font-family: 'Raleway', sans-serif;
+} 
+
+.accordion-item {
+  margin: 0 auto;
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  #container1 {
+      height: auto;
+      width: 100%;
+      clip-path: none;
+  }
+  #container2{
+    margin-top: 12%;
+  }
+
+  #skill-container2{
+    margin-top: 1em;
+  }
+
+  .accordion > .row > .col-12 > .accordion-item{
+    width: 50vw;
+  }
+
+  .me {
+      max-width: 100%;
+      height: auto;
+  }
+
+  .hometext {
+      font-size: 1.2em;
+      margin-top: 0.5em;
+  }
+
+  #hi {
+      margin-top: 1em;
+  }
+}
+
 
 #education{ 
   text-align: center;
 }
 
-
 .accordion-item{
-  width: 20em;
+  width: 25vw;
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 .accordion-item, .accordion-button{
@@ -299,9 +337,8 @@ a.socialLinks:hover {
 
 #expContent{
   border-radius: 1em;
-  width:45em;
+  width:60vw;
   height: max-content;
-  /* background-color: white; */
   color: white;
 }
 #expContent > div > ul{
@@ -480,7 +517,7 @@ opacity: 0%;
 }
 
 #contactContainer{
-  animation: slide_Left linear;
+  animation: slide_Right linear;
   animation-timeline: view();
   animation-range: entry 0 cover 40%;
 }
