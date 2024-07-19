@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit} from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 @Component({
@@ -7,22 +7,36 @@ import Swal from 'sweetalert2';
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.css'],
 })
-export class PortfolioComponent {
-  constructor(private fb: FormBuilder) {}
+export class PortfolioComponent implements OnInit {
+  constructor(private _formBuilder: FormBuilder) {}
+  formGroup:FormGroup;
+  isSubmitted = false;
 
-  formApi: FormGroup = this.fb.group({
-    from_name: '',
-    from_email: '',
-    message: '',
-  });
+  ngOnInit(): void {
+    this.formGroup = this._formBuilder.group({
+      from_name: ['', Validators.required],
+      from_email: ['', Validators.required],
+      message: ['', Validators.required],
+    });
+  }
+
+  get from_name() { return this.formGroup.get('from_name'); }
+  get from_email() { return this.formGroup.get('from_email'); }
+  get message() { return this.formGroup.get('message'); }
 
   async send() {
+    this.isSubmitted = false;
+    if (this.formGroup.invalid) {
+      this.isSubmitted = true; //add input borders red 
+      return;
+    }
+
     emailjs.init('kJfS8RR9dekvphXCy');
     let response = await emailjs.send('service_pwe1eny', 'template_r7ay4xe', {
-      from_name: this.formApi.value.from_name,
+      from_name: this.formGroup.value.from_name,
       to_name: 'Muzammil',
-      from_email: this.formApi.value.from_email,
-      message: this.formApi.value.message,
+      from_email: this.formGroup.value.from_email,
+      message: this.formGroup.value.message,
     });
     if (response.status == 200 && response.text == 'OK') {
       Swal.fire({
@@ -37,7 +51,7 @@ export class PortfolioComponent {
         },
       });
     }
-    this.formApi.reset();
+    this.formGroup.reset();
   }
 
   //onscroll change nav bar bg

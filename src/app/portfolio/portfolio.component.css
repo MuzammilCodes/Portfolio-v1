@@ -8,7 +8,14 @@
   border-radius: 5px;
 }
 
-
+.star::after {
+	content: "*";
+	position: absolute;
+	color: red;
+	width: 10px;
+	height: 10px;
+	text-align: center;
+}
 /* --------------------------------------------------- */
 
 .navbar{
