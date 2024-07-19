@@ -16,6 +16,9 @@
 	height: 10px;
 	text-align: center;
 }
+.redBorder{
+  border: 1px solid red;
+}
 /* --------------------------------------------------- */
 
 .navbar{

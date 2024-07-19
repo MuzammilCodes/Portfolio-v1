@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 export class PortfolioComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) {}
   formGroup:FormGroup;
-  isSubmitted = false;
+  isValid = false;
 
   ngOnInit(): void {
     this.formGroup = this._formBuilder.group({
@@ -25,9 +25,9 @@ export class PortfolioComponent implements OnInit {
   get message() { return this.formGroup.get('message'); }
 
   async send() {
-    this.isSubmitted = false;
+    this.isValid = false;
     if (this.formGroup.invalid) {
-      this.isSubmitted = true; //add input borders red 
+      this.isValid = true; //add input borders red 
       return;
     }
 
