@@ -14,7 +14,7 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this._formBuilder.group({
-      from_name: ['', Validators.required],
+      from_name: [''],
       from_email: ['', Validators.required],
       message: ['', Validators.required],
     });
