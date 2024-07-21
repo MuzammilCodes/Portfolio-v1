@@ -27,16 +27,16 @@ export class PortfolioComponent implements OnInit {
   async send() {
     this.isValid = false;
     if (this.formGroup.invalid) {
-      this.isValid = true; //add input borders red 
+      this.isValid = true;
       return;
     }
 
     emailjs.init('kJfS8RR9dekvphXCy');
     let response = await emailjs.send('service_pwe1eny', 'template_r7ay4xe', {
-      from_name: this.formGroup.value.from_name,
+      from_name: this.from_name.value,
       to_name: 'Muzammil',
-      from_email: this.formGroup.value.from_email,
-      message: this.formGroup.value.message,
+      from_email: this.from_email.value,
+      message: this.message.value,
     });
     if (response.status == 200 && response.text == 'OK') {
       Swal.fire({
