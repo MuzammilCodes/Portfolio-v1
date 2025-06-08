@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TrimDirective } from './directives/trim.directive';
+import { ExperienceComponent } from './experience/experience.component';
 
 
 
@@ -16,7 +17,8 @@ import { TrimDirective } from './directives/trim.directive';
     AppComponent,
     HomeComponent,
     PortfolioComponent,
-    TrimDirective
+    TrimDirective,
+    ExperienceComponent
   ],
   imports: [
     BrowserModule,
