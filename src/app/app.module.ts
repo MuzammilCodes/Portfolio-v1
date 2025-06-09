@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TrimDirective } from './directives/trim.directive';
@@ -15,7 +14,6 @@ import { ExperienceComponent } from './experience/experience.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     PortfolioComponent,
     TrimDirective,
     ExperienceComponent

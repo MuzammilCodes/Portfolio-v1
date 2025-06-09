@@ -1,5 +1,5 @@
 .experience {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            /* background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); */
             min-height: 100vh;
             padding: 50px 0;
         }
@@ -9,16 +9,26 @@
             padding: 20px 0;
         }
 
-        .timeline::before {
+.timeline::before {
             content: '';
             position: absolute;
             left: 50%;
             top: 0;
             bottom: 0;
-            width: 4px;
-            background: linear-gradient(to bottom, #ff6b35, #f7931e, #4ecdc4);
+            width: 2px;
+            background-color: #0A1931;
+            /* background: linear-gradient(to bottom, 
+                rgba(100, 255, 218, 0.8) 0%, 
+                rgba(255, 255, 255, 1) 20%,
+                rgba(255, 255, 255, 1) 80%,
+                rgba(100, 255, 218, 0.8) 100%
+            ); */
             transform: translateX(-50%);
-            border-radius: 2px;
+            box-shadow: 
+                0 0 10px rgba(255, 255, 255, 0.8),
+                0 0 20px rgba(255, 255, 255, 0.6),
+                0 0 40px rgba(255, 255, 255, 0.4);
+            animation: pulse-glow 2s ease-in-out infinite alternate;
         }
 
         .timeline-item {
@@ -34,13 +44,17 @@
             z-index: 10;
         }
 
-        .main-node {
-            width: 20px;
-            height: 20px;
-            background: #ff6b35;
-            border: 4px solid #fff;
+.main-node {
+            width: 24px;
+            height: 24px;
+            background: radial-gradient(circle, #64ffda 0%, #48abe0 100%);
+            border: 3px solid #fff;
             border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+            box-shadow: 
+                0 0 20px rgba(100, 255, 218, 0.8),
+                0 0 40px rgba(100, 255, 218, 0.6),
+                inset 0 0 10px rgba(255, 255, 255, 0.3);
+            animation: node-pulse 2s ease-in-out infinite;
         }
 
         .sub-node {
